@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -118,8 +119,23 @@ public class TechJobs {
     }
 
     // Print a list of jobs
-    private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+    private static void printJobs(ArrayList<HashMap<String, String>> allJobs) {
+        //String jobList = "";
+        if(allJobs.size() == 0){
+            System.out.print("No Results");
+        }
+        for(HashMap<String,String> job : allJobs) {
+            System.out.println("\n*****");
 
-        System.out.println("printJobs is not implemented yet");
+            for(String jobField : job.keySet()) {
+
+                System.out.println(jobField + ": " + job.get(jobField));
+            }
+            System.out.println("*****");
+
+
+        }
+        //System.out.println("Search results returned: " + allJobs.size());
+
     }
 }
